@@ -121,31 +121,68 @@ button.remover {
 <div class="product">Torresmo G (600g) – R$ 39,90 <button onclick="addToCart('Torresmo G 600g',39.90)">Adicionar</button></div>
 </div>
 
+<style>
+.combo {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.combo-economico {
+  border: 3px solid #2ecc71;
+}
+
+.combo-classico {
+  border: 3px solid #3498db;
+}
+
+.combo-top {
+  border: 3px solid #e74c3c;
+  box-shadow: 0 0 15px rgba(231,76,60,0.6);
+}
+
+.product-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-desc {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555;
+}
+</style>
+
 <div class="section">
 <h2>🔥 Combos</h2>
 
-<div class="product">
-<div class="product-title">Combo Econômico – R$ 14,50</div>
-<div class="product-desc">
-Batata frita pequena, acompanhada de Coca-Cola 200ml
-</div>
-<button onclick="addToCart('Combo Econômico',14.50)">Adicionar</button>
-</div>
-
-<div class="product">
-<div class="product-title">Combo Clássico – R$ 22,50</div>
-<div class="product-desc">
-Batata frita grande com Coca-Cola 200ml
-</div>
-<button onclick="addToCart('Combo Clássico',22.50)">Adicionar</button>
+<div class="combo combo-economico">
+  <div class="product-title">Combo Econômico – R$ 14,50</div>
+  <div class="product-desc">
+    Batata frita pequena, com Coca cola 200ml
+  </div>
+  <button onclick="addToCart('Combo Econômico',14.50)">Adicionar</button>
 </div>
 
-<div class="product">
-<div class="product-title">Combo Top – R$ 30,00</div>
-<div class="product-desc">
-Batata frita com calabresa e bacon, acompanhada de Coca-Cola 200ml
+<div class="combo combo-classico">
+  <div class="product-title">Combo Clássico – R$ 22,50</div>
+  <div class="product-desc">
+    Batata frita grande, com Coca cola 200ml
+  </div>
+  <button onclick="addToCart('Combo Clássico',22.50)">Adicionar</button>
 </div>
-<button onclick="addToCart('Combo Top',30)">Adicionar</button>
+
+<div class="combo combo-top">
+  <div class="product-title">Combo Top – R$ 30,00</div>
+  <div class="product-desc">
+    Batata frita com calabresa e bacon, e Coca cola 200ml
+  </div>
+  <button onclick="addToCart('Combo Top',30)">Adicionar</button>
+</div>
+
 </div>
 
 <div class="cart">
