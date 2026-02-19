@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(180deg, #000000, #111111);
     color: white;
-    padding-bottom: 260px;
+    padding-bottom: 280px;
 }
 
 /* BANNER */
@@ -47,9 +47,14 @@ body {
     font-size: 12px;
 }
 
-/* PRODUTOS */
+/* SEÇÕES */
 .section {
     padding: 20px;
+}
+
+.section h2 {
+    border-left: 5px solid #ff4d00;
+    padding-left: 10px;
 }
 
 .product {
@@ -63,7 +68,7 @@ button {
     background: linear-gradient(90deg, #ff4d00, #ff9900);
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 6px 10px;
     margin-top: 8px;
     border-radius: 5px;
     cursor: pointer;
@@ -73,7 +78,6 @@ input {
     width: 60px;
 }
 
-/* CARRINHO */
 .cart {
     position: fixed;
     bottom: 0;
@@ -81,14 +85,14 @@ input {
     background: #000;
     padding: 15px;
     border-top: 2px solid #ff4d00;
-    max-height: 240px;
+    max-height: 260px;
     overflow-y: auto;
 }
 
 .remove-btn {
     background: red;
-    padding: 4px 8px;
     font-size: 12px;
+    padding: 3px 6px;
 }
 </style>
 </head>
@@ -98,36 +102,97 @@ input {
 <div class="banner">
 <h1>ADEGA AFTER 🍻</h1>
 <p>Entrega rápida em Diadema</p>
+<p><strong>Funcionamento:</strong> 14h20 às 04h00</p>
 </div>
 
 <div class="cart-icon">
 🛒 <span id="contador">0</span>
 </div>
 
+<!-- PRODUTOS -->
+
 <div class="section">
-
-<div class="product">
-Skol 269ml – R$ 3,99<br>
-Qtd:
+<h2>🍺 Cervejas</h2>
+<div class="product">Skol 269ml – R$ 3,99<br>
 <input type="number" id="q1" min="1" value="1">
-<button onclick="addCarrinho('Skol 269ml', 3.99, 'q1')">Adicionar</button>
-</div>
+<button onclick="addCarrinho('Skol 269ml', 3.99, 'q1')">Adicionar</button></div>
 
-<div class="product">
-Petra Puro Malte 269ml – R$ 3,49<br>
-Qtd:
+<div class="product">Petra Puro Malte 269ml – R$ 3,49<br>
 <input type="number" id="q2" min="1" value="1">
-<button onclick="addCarrinho('Petra Puro Malte 269ml', 3.49, 'q2')">Adicionar</button>
+<button onclick="addCarrinho('Petra Puro Malte 269ml', 3.49, 'q2')">Adicionar</button></div>
 </div>
 
+<div class="section">
+<h2>🥤 Refrigerantes</h2>
+<div class="product">Coca-Cola 200ml – R$ 2,99<br>
+<input type="number" id="q3" min="1" value="1">
+<button onclick="addCarrinho('Coca-Cola 200ml', 2.99, 'q3')">Adicionar</button></div>
+
+<div class="product">Guaraná Antarctica 200ml – R$ 2,79<br>
+<input type="number" id="q4" min="1" value="1">
+<button onclick="addCarrinho('Guaraná Antarctica 200ml', 2.79, 'q4')">Adicionar</button></div>
+
+<div class="product">Coca-Cola Zero 2L – R$ 15,99<br>
+<input type="number" id="q5" min="1" value="1">
+<button onclick="addCarrinho('Coca-Cola Zero 2L', 15.99, 'q5')">Adicionar</button></div>
 </div>
 
+<div class="section">
+<h2>🍟 Porções</h2>
+<div class="product">Batata Frita P – R$ 12,00<br>
+<input type="number" id="q6" min="1" value="1">
+<button onclick="addCarrinho('Batata Frita P', 12.00, 'q6')">Adicionar</button></div>
+
+<div class="product">Batata Frita G – R$ 20,00<br>
+<input type="number" id="q7" min="1" value="1">
+<button onclick="addCarrinho('Batata Frita G', 20.00, 'q7')">Adicionar</button></div>
+
+<div class="product">Batata Completa P – R$ 18,00<br>
+<input type="number" id="q8" min="1" value="1">
+<button onclick="addCarrinho('Batata Completa P', 18.00, 'q8')">Adicionar</button></div>
+
+<div class="product">Batata Completa G – R$ 28,00<br>
+<input type="number" id="q9" min="1" value="1">
+<button onclick="addCarrinho('Batata Completa G', 28.00, 'q9')">Adicionar</button></div>
+</div>
+
+<div class="section">
+<h2>🐷 Torresmo</h2>
+<div class="product">Torresmo P 250g – R$ 19,90<br>
+<input type="number" id="q10" min="1" value="1">
+<button onclick="addCarrinho('Torresmo P 250g', 19.90, 'q10')">Adicionar</button></div>
+
+<div class="product">Torresmo M 400g – R$ 29,90<br>
+<input type="number" id="q11" min="1" value="1">
+<button onclick="addCarrinho('Torresmo M 400g', 29.90, 'q11')">Adicionar</button></div>
+
+<div class="product">Torresmo G 600g – R$ 39,90<br>
+<input type="number" id="q12" min="1" value="1">
+<button onclick="addCarrinho('Torresmo G 600g', 39.90, 'q12')">Adicionar</button></div>
+</div>
+
+<div class="section">
+<h2>🔥 Combos</h2>
+<div class="product">Combo Econômico – R$ 14,50<br>
+<input type="number" id="q13" min="1" value="1">
+<button onclick="addCarrinho('Combo Econômico', 14.50, 'q13')">Adicionar</button></div>
+
+<div class="product">Combo Clássico – R$ 22,50<br>
+<input type="number" id="q14" min="1" value="1">
+<button onclick="addCarrinho('Combo Clássico', 22.50, 'q14')">Adicionar</button></div>
+
+<div class="product">Combo Top – R$ 30,00<br>
+<input type="number" id="q15" min="1" value="1">
+<button onclick="addCarrinho('Combo Top', 30.00, 'q15')">Adicionar</button></div>
+</div>
+
+<!-- CARRINHO -->
 <div class="cart">
 <h3>🛒 Seu Pedido</h3>
 <div id="lista"></div>
 
 <p>Subtotal: R$ <span id="subtotal">0.00</span></p>
-<p>Taxa de Entrega: R$ <span id="taxa">0.00</span></p>
+<p>Taxa: R$ <span id="taxa">0.00</span></p>
 <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
 
 <button onclick="finalizarPedido()">Finalizar Pedido</button>
@@ -139,7 +204,6 @@ let carrinho = [];
 
 function addCarrinho(nome, preco, qtdId) {
     let qtd = parseInt(document.getElementById(qtdId).value);
-
     carrinho.push({nome, preco, qtd});
     atualizarCarrinho();
 }
@@ -165,10 +229,8 @@ function atualizarCarrinho() {
         subtotal += totalItem;
 
         lista.innerHTML += `
-            ${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2)}
-            <button class="remove-btn" onclick="removerItem(${index})">X</button>
-            <br><br>
-        `;
+        ${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2)}
+        <button class="remove-btn" onclick="removerItem(${index})">X</button><br><br>`;
     });
 
     let taxa = calcularTaxa(subtotal);
@@ -215,3 +277,7 @@ function esvaziarCarrinho() {
 
 </body>
 </html>
+    
+
+
+        
