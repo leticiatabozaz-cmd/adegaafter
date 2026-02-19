@@ -9,41 +9,58 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background: linear-gradient(180deg, #000000, #111111);
     color: white;
-    padding-bottom: 180px;
+    padding-bottom: 260px;
 }
 
-header {
-    background: linear-gradient(90deg, #000, #1a1a1a);
-    padding: 20px;
+/* BANNER */
+.banner {
     text-align: center;
-    border-bottom: 2px solid #e50914;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #ff4d00 0%, #000 60%);
 }
 
-header h1 {
-    margin: 0;
-    color: #e50914;
+.banner h1 {
+    font-size: 36px;
+    background: linear-gradient(90deg, #ff4d00, #ff9900);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
+/* CONTADOR */
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff4d00;
+    padding: 10px 14px;
+    border-radius: 50px;
+}
+
+.cart-icon span {
+    background: white;
+    color: black;
+    border-radius: 50%;
+    padding: 3px 7px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* PRODUTOS */
 .section {
     padding: 20px;
 }
 
-.section h2 {
-    border-left: 5px solid #e50914;
-    padding-left: 10px;
-}
-
 .product {
-    background-color: #1c1c1c;
+    background: #1a1a1a;
     padding: 15px;
     margin: 10px 0;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 button {
-    background-color: #e50914;
+    background: linear-gradient(90deg, #ff4d00, #ff9900);
     color: white;
     border: none;
     padding: 8px 12px;
@@ -56,27 +73,38 @@ input {
     width: 60px;
 }
 
+/* CARRINHO */
 .cart {
     position: fixed;
     bottom: 0;
     width: 100%;
     background: #000;
     padding: 15px;
-    border-top: 2px solid #e50914;
+    border-top: 2px solid #ff4d00;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.remove-btn {
+    background: red;
+    padding: 4px 8px;
+    font-size: 12px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="banner">
 <h1>ADEGA AFTER 🍻</h1>
 <p>Entrega rápida em Diadema</p>
-<p><strong>Funcionamento:</strong> 14h20 às 04h00</p>
-</header>
+</div>
+
+<div class="cart-icon">
+🛒 <span id="contador">0</span>
+</div>
 
 <div class="section">
-<h2>🍺 Cervejas</h2>
 
 <div class="product">
 Skol 269ml – R$ 3,99<br>
@@ -94,137 +122,94 @@ Qtd:
 
 </div>
 
-<div class="section">
-<h2>🥤 Refrigerantes</h2>
-
-<div class="product">
-Coca-Cola 200ml – R$ 2,99<br>
-Qtd:
-<input type="number" id="q3" min="1" value="1">
-<button onclick="addCarrinho('Coca-Cola 200ml', 2.99, 'q3')">Adicionar</button>
-</div>
-
-<div class="product">
-Guaraná Antarctica 200ml – R$ 2,79<br>
-Qtd:
-<input type="number" id="q4" min="1" value="1">
-<button onclick="addCarrinho('Guaraná Antarctica 200ml', 2.79, 'q4')">Adicionar</button>
-</div>
-
-<div class="product">
-Coca-Cola Zero 2L – R$ 15,99<br>
-Qtd:
-<input type="number" id="q5" min="1" value="1">
-<button onclick="addCarrinho('Coca-Cola Zero 2L', 15.99, 'q5')">Adicionar</button>
-</div>
-
-</div>
-
-<div class="section">
-<h2>🍟 Porções</h2>
-
-<div class="product">
-Batata Frita P – R$ 12,00<br>
-Qtd:
-<input type="number" id="q6" min="1" value="1">
-<button onclick="addCarrinho('Batata Frita P', 12.00, 'q6')">Adicionar</button>
-</div>
-
-<div class="product">
-Batata Frita G – R$ 20,00<br>
-Qtd:
-<input type="number" id="q7" min="1" value="1">
-<button onclick="addCarrinho('Batata Frita G', 20.00, 'q7')">Adicionar</button>
-</div>
-
-<div class="product">
-Batata Completa P – R$ 18,00<br>
-Qtd:
-<input type="number" id="q8" min="1" value="1">
-<button onclick="addCarrinho('Batata Completa P', 18.00, 'q8')">Adicionar</button>
-</div>
-
-<div class="product">
-Batata Completa G – R$ 28,00<br>
-Qtd:
-<input type="number" id="q9" min="1" value="1">
-<button onclick="addCarrinho('Batata Completa G', 28.00, 'q9')">Adicionar</button>
-</div>
-
-</div>
-
-<div class="section">
-<h2>🐷 Torresmo</h2>
-
-<div class="product">
-Torresmo P (250g) – R$ 19,90<br>
-Qtd:
-<input type="number" id="q10" min="1" value="1">
-<button onclick="addCarrinho('Torresmo P 250g', 19.90, 'q10')">Adicionar</button>
-</div>
-
-<div class="product">
-Torresmo M (400g) – R$ 29,90<br>
-Qtd:
-<input type="number" id="q11" min="1" value="1">
-<button onclick="addCarrinho('Torresmo M 400g', 29.90, 'q11')">Adicionar</button>
-</div>
-
-<div class="product">
-Torresmo G (600g) – R$ 39,90<br>
-Qtd:
-<input type="number" id="q12" min="1" value="1">
-<button onclick="addCarrinho('Torresmo G 600g', 39.90, 'q12')">Adicionar</button>
-</div>
-
-</div>
-
 <div class="cart">
-<h3>🛒 Carrinho</h3>
+<h3>🛒 Seu Pedido</h3>
 <div id="lista"></div>
+
+<p>Subtotal: R$ <span id="subtotal">0.00</span></p>
+<p>Taxa de Entrega: R$ <span id="taxa">0.00</span></p>
 <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-<button onclick="finalizarPedido()">Finalizar Pedido no WhatsApp</button>
+
+<button onclick="finalizarPedido()">Finalizar Pedido</button>
+<button onclick="esvaziarCarrinho()">Esvaziar</button>
 </div>
 
 <script>
 let carrinho = [];
-let total = 0;
 
 function addCarrinho(nome, preco, qtdId) {
     let qtd = parseInt(document.getElementById(qtdId).value);
+
     carrinho.push({nome, preco, qtd});
-    total += preco * qtd;
     atualizarCarrinho();
+}
+
+function removerItem(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
+function calcularTaxa(subtotal) {
+    if (subtotal >= 50) return 0;
+    if (subtotal >= 30) return 5;
+    return 8;
 }
 
 function atualizarCarrinho() {
     let lista = document.getElementById("lista");
+    let subtotal = 0;
     lista.innerHTML = "";
-    carrinho.forEach(item => {
-        lista.innerHTML += item.qtd + "x " + item.nome + "<br>";
+
+    carrinho.forEach((item, index) => {
+        let totalItem = item.preco * item.qtd;
+        subtotal += totalItem;
+
+        lista.innerHTML += `
+            ${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2)}
+            <button class="remove-btn" onclick="removerItem(${index})">X</button>
+            <br><br>
+        `;
     });
-    document.getElementById("total").innerText = total.toFixed(2);
+
+    let taxa = calcularTaxa(subtotal);
+    let totalFinal = subtotal + taxa;
+
+    document.getElementById("contador").innerText = carrinho.length;
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+    document.getElementById("taxa").innerText = taxa.toFixed(2);
+    document.getElementById("total").innerText = totalFinal.toFixed(2);
 }
 
 function finalizarPedido() {
-
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
     }
 
+    let subtotal = 0;
     let mensagem = "Olá quero pedir:%0A%0A";
 
     carrinho.forEach(item => {
-        mensagem += item.qtd + "x " + item.nome + "%0A";
+        let totalItem = item.preco * item.qtd;
+        subtotal += totalItem;
+        mensagem += `${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2)}%0A`;
     });
 
-    mensagem += "%0ATotal: R$ " + total.toFixed(2) + "%0A%0A";
+    let taxa = calcularTaxa(subtotal);
+    let totalFinal = subtotal + taxa;
+
+    mensagem += `%0ASubtotal: R$ ${subtotal.toFixed(2)}%0A`;
+    mensagem += `Taxa: R$ ${taxa.toFixed(2)}%0A`;
+    mensagem += `Total: R$ ${totalFinal.toFixed(2)}%0A%0A`;
     mensagem += "Forma de pagamento:%0AEndereço:";
 
     let numero = "5511939377454";
-
     window.open("https://wa.me/" + numero + "?text=" + mensagem, "_blank");
+}
+
+function esvaziarCarrinho() {
+    carrinho = [];
+    atualizarCarrinho();
 }
 </script>
 
