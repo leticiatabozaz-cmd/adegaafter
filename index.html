@@ -4,79 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adega After</title>
+
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background: linear-gradient(180deg, #000000, #111111);
     color: white;
 }
 
-header {
-    background: linear-gradient(90deg, #000, #1a1a1a);
-    padding: 20px;
+/* BANNER */
+.banner {
     text-align: center;
-    border-bottom: 2px solid #e50914;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #ff4d00 0%, #000 60%);
+    animation: brilho 4s infinite alternate;
 }
 
-header h1 {
-    margin: 0;
-    color: #e50914;
-    font-size: 28px;
+@keyframes brilho {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.2); }
 }
 
+.banner img {
+    width: 180px;
+    margin-bottom: 15px;
+}
+
+.banner h1 {
+    font-size: 38px;
+    background: linear-gradient(90deg, #ff4d00, #ff9900);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 10px 0;
+}
+
+.banner p {
+    font-size: 16px;
+}
+
+/* SEÇÕES */
 .section {
     padding: 20px;
 }
 
 .section h2 {
-    border-left: 5px solid #e50914;
+    border-left: 5px solid #ff4d00;
     padding-left: 10px;
+    margin-bottom: 15px;
 }
 
 .product {
-    background-color: #1c1c1c;
-    padding: 12px;
+    background: #1a1a1a;
+    padding: 15px;
     margin: 10px 0;
-    border-radius: 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    background: #262626;
+    transform: scale(1.02);
 }
 
 .product strong {
-    color: #e50914;
+    color: #ff9900;
 }
 
+/* FOOTER */
 .footer {
-    background-color: #000;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 2px solid #ff4d00;
     font-size: 14px;
-    border-top: 2px solid #e50914;
 }
 
+/* BOTÃO WHATSAPP */
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #25D366;
     color: white;
-    border: none;
-    padding: 15px 18px;
+    padding: 16px 20px;
     border-radius: 50px;
     font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>ADEGA AFTER 🍻</h1>
-    <p>Entrega rápida em Diadema</p>
-    <p><strong>Funcionamento:</strong> 14h20 às 04h00</p>
-</header>
+<div class="banner">
+    <img src="SUA-LOGO-AQUI.jpg" alt="Adega After">
+    <h1>ADEGA AFTER</h1>
+    <p>Aberto das 14h20 às 04h00</p>
+    <p>Entrega rápida • Pix e Cartão</p>
+</div>
 
 <div class="section">
     <h2>🍺 Cervejas</h2>
@@ -87,48 +114,30 @@ header h1 {
 <div class="section">
     <h2>🥤 Refrigerantes</h2>
     <div class="product">Coca-Cola 200ml – <strong>R$ 2,99</strong></div>
-    <div class="product">Guaraná Antarctica 200ml – <strong>R$ 2,79</strong></div>
     <div class="product">Coca-Cola Zero 2L – <strong>R$ 15,99</strong></div>
 </div>
 
 <div class="section">
     <h2>🍟 Porções</h2>
     <div class="product">Batata Frita P – <strong>R$ 12,00</strong></div>
-    <div class="product">Batata Frita G – <strong>R$ 20,00</strong></div>
-    <div class="product">Batata Completa P – <strong>R$ 18,00</strong></div>
     <div class="product">Batata Completa G – <strong>R$ 28,00</strong></div>
 </div>
 
 <div class="section">
-    <h2>🐷 Torresmo</h2>
-    <div class="product">Torresmo P (250g) – <strong>R$ 19,90</strong></div>
-    <div class="product">Torresmo M (400g) – <strong>R$ 29,90</strong></div>
-    <div class="product">Torresmo G (600g) – <strong>R$ 39,90</strong></div>
-</div>
-
-<div class="section">
-    <h2>🔥 Combos</h2>
-    <div class="product">Combo Econômico – <strong>R$ 14,50</strong></div>
-    <div class="product">Combo Clássico – <strong>R$ 22,50</strong></div>
-    <div class="product">Combo Top – <strong>R$ 30,00</strong></div>
-</div>
-
-<div class="section">
     <h2>🚚 Entrega</h2>
-    <p>Taxa calculada conforme endereço.</p>
-    <p>Pagamento apenas via <strong>Pix ou Cartão</strong>.</p>
-    <p>Venda de bebidas alcoólicas somente para maiores de 18 anos.</p>
+    <p>Taxa conforme endereço.</p>
+    <p>Venda de bebidas alcoólicas apenas para maiores de 18 anos.</p>
 </div>
 
 <div class="footer">
-    © 2026 Adega After - Todos os direitos reservados
+    © 2026 Adega After
 </div>
 
 <a class="whatsapp-btn" 
 href="https://wa.me/5511939377454?text=Olá%20quero%20pedir:%0A%0AProduto:%0AQuantidade:%0AForma%20de%20pagamento:%0AEndereço:" 
 target="_blank">
-📲 Pedir no WhatsApp
+📲 Pedir
 </a>
 
 </body>
-      </html>
+</html>
