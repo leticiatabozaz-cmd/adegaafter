@@ -40,13 +40,16 @@ body {
     padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .product button {
     background: #ff4d00;
     border: none;
     color: white;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -75,6 +78,11 @@ button.finalizar {
     font-size: 16px;
     cursor: pointer;
 }
+
+button.remover {
+    background: red;
+    margin-left: 10px;
+}
 </style>
 </head>
 
@@ -87,67 +95,37 @@ button.finalizar {
 
 <div class="section">
 <h2>🍺 Cervejas</h2>
-
-<div class="product">Skol 269ml – R$ 3,99
-<button onclick="addToCart('Skol 269ml',3.99)">Adicionar</button></div>
-
-<div class="product">Petra Puro Malte 269ml – R$ 3,49
-<button onclick="addToCart('Petra Puro Malte 269ml',3.49)">Adicionar</button></div>
+<div class="product">Skol 269ml – R$ 3,99 <button onclick="addToCart('Skol 269ml',3.99)">Adicionar</button></div>
+<div class="product">Petra Puro Malte 269ml – R$ 3,49 <button onclick="addToCart('Petra Puro Malte 269ml',3.49)">Adicionar</button></div>
 </div>
 
 <div class="section">
 <h2>🥤 Refrigerantes</h2>
-
-<div class="product">Coca-Cola 200ml – R$ 2,99
-<button onclick="addToCart('Coca-Cola 200ml',2.99)">Adicionar</button></div>
-
-<div class="product">Guaraná Antarctica 200ml – R$ 2,79
-<button onclick="addToCart('Guaraná Antarctica 200ml',2.79)">Adicionar</button></div>
-
-<div class="product">Coca-Cola Zero 2L – R$ 15,99
-<button onclick="addToCart('Coca-Cola Zero 2L',15.99)">Adicionar</button></div>
+<div class="product">Coca-Cola 200ml – R$ 2,99 <button onclick="addToCart('Coca-Cola 200ml',2.99)">Adicionar</button></div>
+<div class="product">Guaraná Antarctica 200ml – R$ 2,79 <button onclick="addToCart('Guaraná Antarctica 200ml',2.79)">Adicionar</button></div>
+<div class="product">Coca-Cola Zero 2L – R$ 15,99 <button onclick="addToCart('Coca-Cola Zero 2L',15.99)">Adicionar</button></div>
 </div>
 
 <div class="section">
 <h2>🍟 Porções</h2>
-
-<div class="product">Batata Frita P – R$ 12,00
-<button onclick="addToCart('Batata Frita P',12)">Adicionar</button></div>
-
-<div class="product">Batata Frita G – R$ 20,00
-<button onclick="addToCart('Batata Frita G',20)">Adicionar</button></div>
-
-<div class="product">Batata Completa P – R$ 18,00
-<button onclick="addToCart('Batata Completa P',18)">Adicionar</button></div>
-
-<div class="product">Batata Completa G – R$ 28,00
-<button onclick="addToCart('Batata Completa G',28)">Adicionar</button></div>
+<div class="product">Batata Frita P – R$ 12,00 <button onclick="addToCart('Batata Frita P',12)">Adicionar</button></div>
+<div class="product">Batata Frita G – R$ 20,00 <button onclick="addToCart('Batata Frita G',20)">Adicionar</button></div>
+<div class="product">Batata Completa P – R$ 18,00 <button onclick="addToCart('Batata Completa P',18)">Adicionar</button></div>
+<div class="product">Batata Completa G – R$ 28,00 <button onclick="addToCart('Batata Completa G',28)">Adicionar</button></div>
 </div>
 
 <div class="section">
 <h2>🐷 Torresmo</h2>
-
-<div class="product">Torresmo P (250g) – R$ 19,90
-<button onclick="addToCart('Torresmo P 250g',19.90)">Adicionar</button></div>
-
-<div class="product">Torresmo M (400g) – R$ 29,90
-<button onclick="addToCart('Torresmo M 400g',29.90)">Adicionar</button></div>
-
-<div class="product">Torresmo G (600g) – R$ 39,90
-<button onclick="addToCart('Torresmo G 600g',39.90)">Adicionar</button></div>
+<div class="product">Torresmo P (250g) – R$ 19,90 <button onclick="addToCart('Torresmo P 250g',19.90)">Adicionar</button></div>
+<div class="product">Torresmo M (400g) – R$ 29,90 <button onclick="addToCart('Torresmo M 400g',29.90)">Adicionar</button></div>
+<div class="product">Torresmo G (600g) – R$ 39,90 <button onclick="addToCart('Torresmo G 600g',39.90)">Adicionar</button></div>
 </div>
 
 <div class="section">
 <h2>🔥 Combos</h2>
-
-<div class="product">Combo Econômico – R$ 14,50
-<button onclick="addToCart('Combo Econômico',14.50)">Adicionar</button></div>
-
-<div class="product">Combo Clássico – R$ 22,50
-<button onclick="addToCart('Combo Clássico',22.50)">Adicionar</button></div>
-
-<div class="product">Combo Top – R$ 30,00
-<button onclick="addToCart('Combo Top',30)">Adicionar</button></div>
+<div class="product">Combo Econômico – R$ 14,50 <button onclick="addToCart('Combo Econômico',14.50)">Adicionar</button></div>
+<div class="product">Combo Clássico – R$ 22,50 <button onclick="addToCart('Combo Clássico',22.50)">Adicionar</button></div>
+<div class="product">Combo Top – R$ 30,00 <button onclick="addToCart('Combo Top',30)">Adicionar</button></div>
 </div>
 
 <div class="cart">
@@ -155,10 +133,10 @@ button.finalizar {
 <div id="cart-items"></div>
 
 <p>Subtotal: R$ <span id="subtotal">0.00</span></p>
-<p>Taxa de entrega: R$ <span id="delivery">0.00</span></p>
+<p style="color:#ff9900;">🚚 Taxa de entrega calculada conforme endereço</p>
 <h3>Total: R$ <span id="total">0.00</span></h3>
 
-<input type="text" id="address" placeholder="Digite rua, número e bairro" onblur="detectarTaxa()">
+<input type="text" id="address" placeholder="Digite rua, número e bairro">
 
 <select id="pagamento">
 <option value="">Forma de pagamento</option>
@@ -172,13 +150,6 @@ button.finalizar {
 
 <script>
 let cart = [];
-let deliveryFee = 0;
-
-const taxas = {
-    "centro": 5,
-    "jardim américa": 7,
-    "zona rural": 10
-};
 
 function addToCart(nome, preco){
     cart.push({nome, preco});
@@ -194,12 +165,11 @@ function atualizarCarrinho(){
         subtotal += item.preco;
         itemsDiv.innerHTML += 
         `<p>${item.nome} - R$ ${item.preco.toFixed(2)}
-        <button onclick="removerItem(${index})">❌</button></p>`;
+        <button class="remover" onclick="removerItem(${index})">X</button></p>`;
     });
 
     document.getElementById("subtotal").innerText = subtotal.toFixed(2);
-    document.getElementById("delivery").innerText = deliveryFee.toFixed(2);
-    document.getElementById("total").innerText = (subtotal + deliveryFee).toFixed(2);
+    document.getElementById("total").innerText = subtotal.toFixed(2);
     document.getElementById("cart-count").innerText = cart.length;
 }
 
@@ -210,21 +180,6 @@ function removerItem(index){
 
 function limparCarrinho(){
     cart = [];
-    deliveryFee = 0;
-    atualizarCarrinho();
-}
-
-function detectarTaxa(){
-    let endereco = document.getElementById("address").value.toLowerCase();
-    deliveryFee = 0;
-
-    for (let bairro in taxas) {
-        if (endereco.includes(bairro)) {
-            deliveryFee = taxas[bairro];
-            break;
-        }
-    }
-
     atualizarCarrinho();
 }
 
@@ -242,16 +197,14 @@ function enviarPedido(){
         return;
     }
 
-    detectarTaxa();
-
     let mensagem = "🛒 *Pedido - Adega After*%0A%0A";
 
     cart.forEach(item => {
         mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
     });
 
-    mensagem += `%0A🚚 Taxa: R$ ${deliveryFee.toFixed(2)}`;
-    mensagem += `%0A💰 Total: R$ ${document.getElementById("total").innerText}`;
+    mensagem += `%0A💰 Subtotal: R$ ${document.getElementById("total").innerText}`;
+    mensagem += `%0A🚚 Taxa: A calcular conforme endereço`;
     mensagem += `%0A📍 Endereço: ${endereco}`;
     mensagem += `%0A💳 Pagamento: ${pagamento}`;
 
