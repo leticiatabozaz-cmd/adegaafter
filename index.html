@@ -9,153 +9,224 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #000000, #111111);
+    background-color: #111;
     color: white;
+    padding-bottom: 180px;
 }
 
-/* BANNER */
-.banner {
+header {
+    background: linear-gradient(90deg, #000, #1a1a1a);
+    padding: 20px;
     text-align: center;
-    padding: 40px 20px;
-    background: radial-gradient(circle at center, #ff4d00 0%, #000 60%);
-    animation: brilho 4s infinite alternate;
+    border-bottom: 2px solid #e50914;
 }
 
-@keyframes brilho {
-    from { filter: brightness(1); }
-    to { filter: brightness(1.2); }
+header h1 {
+    margin: 0;
+    color: #e50914;
 }
 
-.banner img {
-    width: 180px;
-    margin-bottom: 15px;
-}
-
-.banner h1 {
-    font-size: 38px;
-    background: linear-gradient(90deg, #ff4d00, #ff9900);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin: 10px 0;
-}
-
-.banner p {
-    font-size: 16px;
-}
-
-/* SEÇÕES */
 .section {
     padding: 20px;
 }
 
 .section h2 {
-    border-left: 5px solid #ff4d00;
+    border-left: 5px solid #e50914;
     padding-left: 10px;
-    margin-bottom: 15px;
 }
 
 .product {
-    background: #1a1a1a;
+    background-color: #1c1c1c;
     padding: 15px;
     margin: 10px 0;
-    border-radius: 10px;
-    transition: 0.3s;
+    border-radius: 8px;
 }
 
-.product:hover {
-    background: #262626;
-    transform: scale(1.02);
-}
-
-.product strong {
-    color: #ff9900;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #000;
-    border-top: 2px solid #ff4d00;
-    font-size: 14px;
-}
-
-/* BOTÃO WHATSAPP */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
+button {
+    background-color: #e50914;
     color: white;
-    padding: 16px 20px;
-    border-radius: 50px;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: none;
+    padding: 8px 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    width: 60px;
+}
+
+.cart {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    padding: 15px;
+    border-top: 2px solid #e50914;
 }
 </style>
 </head>
 
 <body>
 
-<div class="banner">
-    <img src="SUA-LOGO-AQUI.jpg" alt="Adega After">
-    <h1>ADEGA AFTER</h1>
-    <p>Aberto das 14h20 às 04h00</p>
-    <p>Entrega rápida • Pix e Cartão</p>
+<header>
+<h1>ADEGA AFTER 🍻</h1>
+<p>Entrega rápida em Diadema</p>
+<p><strong>Funcionamento:</strong> 14h20 às 04h00</p>
+</header>
+
+<div class="section">
+<h2>🍺 Cervejas</h2>
+
+<div class="product">
+Skol 269ml – R$ 3,99<br>
+Qtd:
+<input type="number" id="q1" min="1" value="1">
+<button onclick="addCarrinho('Skol 269ml', 3.99, 'q1')">Adicionar</button>
+</div>
+
+<div class="product">
+Petra Puro Malte 269ml – R$ 3,49<br>
+Qtd:
+<input type="number" id="q2" min="1" value="1">
+<button onclick="addCarrinho('Petra Puro Malte 269ml', 3.49, 'q2')">Adicionar</button>
+</div>
+
 </div>
 
 <div class="section">
-    <h2>🍺 Cervejas</h2>
-    <div class="product">Skol 269ml – <strong>R$ 3,99</strong></div>
-    <div class="product">Petra Puro Malte 269ml – <strong>R$ 3,49</strong></div>
+<h2>🥤 Refrigerantes</h2>
+
+<div class="product">
+Coca-Cola 200ml – R$ 2,99<br>
+Qtd:
+<input type="number" id="q3" min="1" value="1">
+<button onclick="addCarrinho('Coca-Cola 200ml', 2.99, 'q3')">Adicionar</button>
+</div>
+
+<div class="product">
+Guaraná Antarctica 200ml – R$ 2,79<br>
+Qtd:
+<input type="number" id="q4" min="1" value="1">
+<button onclick="addCarrinho('Guaraná Antarctica 200ml', 2.79, 'q4')">Adicionar</button>
+</div>
+
+<div class="product">
+Coca-Cola Zero 2L – R$ 15,99<br>
+Qtd:
+<input type="number" id="q5" min="1" value="1">
+<button onclick="addCarrinho('Coca-Cola Zero 2L', 15.99, 'q5')">Adicionar</button>
+</div>
+
 </div>
 
 <div class="section">
-    <h2>🥤 Refrigerantes</h2>
-    <div class="product">Coca-Cola 200ml – <strong>R$ 2,99</strong></div>
-    <div class="product">Guaraná Antarctica 200ml – <strong>R$ 2,79</strong></div>
-    <div class="product">Coca-Cola Zero 2L – <strong>R$ 15,99</strong></div>
+<h2>🍟 Porções</h2>
+
+<div class="product">
+Batata Frita P – R$ 12,00<br>
+Qtd:
+<input type="number" id="q6" min="1" value="1">
+<button onclick="addCarrinho('Batata Frita P', 12.00, 'q6')">Adicionar</button>
+</div>
+
+<div class="product">
+Batata Frita G – R$ 20,00<br>
+Qtd:
+<input type="number" id="q7" min="1" value="1">
+<button onclick="addCarrinho('Batata Frita G', 20.00, 'q7')">Adicionar</button>
+</div>
+
+<div class="product">
+Batata Completa P – R$ 18,00<br>
+Qtd:
+<input type="number" id="q8" min="1" value="1">
+<button onclick="addCarrinho('Batata Completa P', 18.00, 'q8')">Adicionar</button>
+</div>
+
+<div class="product">
+Batata Completa G – R$ 28,00<br>
+Qtd:
+<input type="number" id="q9" min="1" value="1">
+<button onclick="addCarrinho('Batata Completa G', 28.00, 'q9')">Adicionar</button>
+</div>
+
 </div>
 
 <div class="section">
-    <h2>🍟 Porções</h2>
-    <div class="product">Batata Frita P – <strong>R$ 12,00</strong></div>
-    <div class="product">Batata Frita G – <strong>R$ 20,00</strong></div>
-    <div class="product">Batata Completa P – <strong>R$ 18,00</strong></div>
-    <div class="product">Batata Completa G – <strong>R$ 28,00</strong></div>
+<h2>🐷 Torresmo</h2>
+
+<div class="product">
+Torresmo P (250g) – R$ 19,90<br>
+Qtd:
+<input type="number" id="q10" min="1" value="1">
+<button onclick="addCarrinho('Torresmo P 250g', 19.90, 'q10')">Adicionar</button>
 </div>
 
-<div class="section">
-    <h2>🐷 Torresmo</h2>
-    <div class="product">Torresmo P (250g) – <strong>R$ 19,90</strong></div>
-    <div class="product">Torresmo M (400g) – <strong>R$ 29,90</strong></div>
-    <div class="product">Torresmo G (600g) – <strong>R$ 39,90</strong></div>
+<div class="product">
+Torresmo M (400g) – R$ 29,90<br>
+Qtd:
+<input type="number" id="q11" min="1" value="1">
+<button onclick="addCarrinho('Torresmo M 400g', 29.90, 'q11')">Adicionar</button>
 </div>
 
-<div class="section">
-    <h2>🔥 Combos</h2>
-    <div class="product">Combo Econômico – <strong>R$ 14,50</strong></div>
-    <div class="product">Combo Clássico – <strong>R$ 22,50</strong></div>
-    <div class="product">Combo Top – <strong>R$ 30,00</strong></div>
+<div class="product">
+Torresmo G (600g) – R$ 39,90<br>
+Qtd:
+<input type="number" id="q12" min="1" value="1">
+<button onclick="addCarrinho('Torresmo G 600g', 39.90, 'q12')">Adicionar</button>
 </div>
 
-<div class="section">
-    <h2>🚚 Entrega</h2>
-    <p>Taxa calculada conforme endereço.</p>
-    <p>Pagamento apenas via <strong>Pix ou Cartão</strong>.</p>
-    <p>Venda de bebidas alcoólicas somente para maiores de 18 anos.</p>
 </div>
 
-<div class="footer">
-    © 2026 Adega After - Todos os direitos reservados
+<div class="cart">
+<h3>🛒 Carrinho</h3>
+<div id="lista"></div>
+<p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+<button onclick="finalizarPedido()">Finalizar Pedido no WhatsApp</button>
 </div>
 
-<a class="whatsapp-btn" 
-href="https://wa.me/5511939377454?text=Olá%20quero%20pedir:%0A%0AProduto:%0AQuantidade:%0AForma%20de%20pagamento:%0AEndereço:" 
-target="_blank">
-📲 Pedir no WhatsApp
-</a>
+<script>
+let carrinho = [];
+let total = 0;
+
+function addCarrinho(nome, preco, qtdId) {
+    let qtd = parseInt(document.getElementById(qtdId).value);
+    carrinho.push({nome, preco, qtd});
+    total += preco * qtd;
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    let lista = document.getElementById("lista");
+    lista.innerHTML = "";
+    carrinho.forEach(item => {
+        lista.innerHTML += item.qtd + "x " + item.nome + "<br>";
+    });
+    document.getElementById("total").innerText = total.toFixed(2);
+}
+
+function finalizarPedido() {
+
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    let mensagem = "Olá quero pedir:%0A%0A";
+
+    carrinho.forEach(item => {
+        mensagem += item.qtd + "x " + item.nome + "%0A";
+    });
+
+    mensagem += "%0ATotal: R$ " + total.toFixed(2) + "%0A%0A";
+    mensagem += "Forma de pagamento:%0AEndereço:";
+
+    let numero = "5511939377454";
+
+    window.open("https://wa.me/" + numero + "?text=" + mensagem, "_blank");
+}
+</script>
 
 </body>
 </html>
