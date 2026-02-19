@@ -154,6 +154,65 @@ button.remover {
   margin-bottom: 10px;
   color: #555;
 }
+<style>
+.combo {
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.combo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.combo-economico {
+  border: 3px solid #2ecc71;
+}
+
+.combo-classico {
+  border: 3px solid #3498db;
+}
+
+.combo-top {
+  border: 3px solid #e74c3c;
+  box-shadow: 0 0 15px rgba(231,76,60,0.6);
+}
+
+.combo-top:hover {
+  box-shadow: 0 0 25px rgba(231,76,60,0.9);
+}
+
+.product-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.product-desc {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.combo button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.combo button:hover {
+  background: #333;
+}
 </style>
 
 <div class="section">
@@ -181,6 +240,8 @@ button.remover {
     Batata frita com calabresa e bacon, e Coca cola 200ml
   </div>
   <button onclick="addToCart('Combo Top',30)">Adicionar</button>
+</div>
+
 </div>
 
 </div>
